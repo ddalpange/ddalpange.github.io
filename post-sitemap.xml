@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ddalpange.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-4/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-5/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-6/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/10/js-clone-object/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/10/js-not-duplicated-object-array/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/26/js-interview-example/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/12/22/linux-wget/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/01/11/js-es6-three-dots/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/02/26/project-make-simpe-memo-finall/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/03/24/manage-node-version/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/04/20/vscode-extensions/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/05/04/choice-chart-library/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/05/14/im-open-source-contibutor/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/07/21/my-first-project/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/08/21/rxjs-whatisrxjs/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/15/not-found-node-using-prettier/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/15/support-tistory-markdown/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/15/ubuntu-18-0-4-hangul-and-devenv-setup/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/16/make-site-mockup/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/16/hexo-travis-stackedit/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/21/how-to-unsubscibe-in-rxjs/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/11/21/hexo-clipboard/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2018/12/31/remember-2018/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2019/01/09/redux-step1/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2019/01/11/redux-step2/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2019/04/25/change-company/</loc>
+        <lastmod>2021-03-08T19:12:21.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/algorithm-make-palindrome/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/algorithm-make-thin-wallet/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/firebase-angular-start/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/firebase-deploy/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/firebase/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/ionic-postcss-error/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-closure/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-immutable-mutable/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-import-export/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-pureFunc/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-study-1/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-study-2/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-study-3/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-study-4/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/js-study-5/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/make-new-blog/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-1/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-2/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ddalpange.github.io/2017/10/03/project-make-simple-memo-3/</loc>
+        <lastmod>2021-03-08T19:12:21.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

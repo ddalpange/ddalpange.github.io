@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.7.1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>리눅스 wget 명령어 - 달팽이 개발일지</title>
+
+
+    <meta name="description" content="설명CUI환경에서 파일을 다운받을때 사용한다. 도움말">
+<meta name="keywords" content="Linux,Wget">
+<meta property="og:type" content="article">
+<meta property="og:title" content="리눅스 wget 명령어">
+<meta property="og:url" content="https://ddalpange.github.io/2017/12/22/linux-wget/index.html">
+<meta property="og:site_name" content="달팽이 개발일지">
+<meta property="og:description" content="설명CUI환경에서 파일을 다운받을때 사용한다. 도움말">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/60/Wget_1.13.4.png">
+<meta property="og:updated_time" content="2021-03-08T19:12:21.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="리눅스 wget 명령어">
+<meta name="twitter:description" content="설명CUI환경에서 파일을 다운받을때 사용한다. 도움말">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/6/60/Wget_1.13.4.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="리눅스 wget 명령어" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88902574-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-88902574-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Logo.png" alt="리눅스 wget 명령어" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Wget_1.13.4.png" alt="리눅스 wget 명령어">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-12-22T14:53:22.000Z">2017-12-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11분 읽기 (대략 1647 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                리눅스 wget 명령어
+            
+        </h1>
+        <div class="content">
+            <h3 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h3><p>CUI환경에서 파일을 다운받을때 사용한다.</p>
+<h3 id="도움말"><a href="#도움말" class="headerlink" title="도움말"></a>도움말</h3><a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> wget -<span class="built_in">help</span></span></span><br><span class="line"></span><br><span class="line">GNU Wget 1.17.1, a non-interactive network retriever.</span><br><span class="line">Usage: wget [OPTION]... [URL]...</span><br><span class="line"></span><br><span class="line">Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line"></span><br><span class="line">Startup:</span><br><span class="line">  -V,  --version                   display the version of Wget and exit</span><br><span class="line">  -h,  --help                      print this help</span><br><span class="line">  -b,  --background                go to background after startup</span><br><span class="line">  -e,  --execute=COMMAND           execute a `.wgetrc'-style command</span><br><span class="line"></span><br><span class="line">Logging and input file:</span><br><span class="line">  -o,  --output-file=FILE          log messages to FILE</span><br><span class="line">  -a,  --append-output=FILE        append messages to FILE</span><br><span class="line">  -d,  --debug                     print lots of debugging information</span><br><span class="line">  -q,  --quiet                     quiet (no output)</span><br><span class="line">  -v,  --verbose                   be verbose (this is the default)</span><br><span class="line">  -nv, --no-verbose                turn off verboseness, without being quiet</span><br><span class="line">       --report-speed=TYPE         output bandwidth as TYPE.  TYPE can be bits</span><br><span class="line">  -i,  --input-file=FILE           download URLs found in local or external FILE</span><br><span class="line">  -F,  --force-html                treat input file as HTML</span><br><span class="line">  -B,  --base=URL                  resolves HTML input-file links (-i -F)</span><br><span class="line">                                     relative to URL</span><br><span class="line">       --config=FILE               specify config file to use</span><br><span class="line">       --no-config                 do not read any config file</span><br><span class="line">       --rejected-log=FILE         log reasons for URL rejection to FILE</span><br><span class="line"></span><br><span class="line">Download:</span><br><span class="line">  -t,  --tries=NUMBER              set number of retries to NUMBER (0 unlimits)</span><br><span class="line">       --retry-connrefused         retry even if connection is refused</span><br><span class="line">  -O,  --output-document=FILE      write documents to FILE</span><br><span class="line">  -nc, --no-clobber                skip downloads that would download to</span><br><span class="line">                                     existing files (overwriting them)</span><br><span class="line">  -c,  --continue                  resume getting a partially-downloaded file</span><br><span class="line">       --start-pos=OFFSET          start downloading from zero-based position OFFSET</span><br><span class="line">       --progress=TYPE             select progress gauge type</span><br><span class="line">       --show-progress             display the progress bar in any verbosity mode</span><br><span class="line">  -N,  --timestamping              don't re-retrieve files unless newer than</span><br><span class="line">                                     local</span><br><span class="line">       --no-if-modified-since      don't use conditional if-modified-since get</span><br><span class="line">                                     requests in timestamping mode</span><br><span class="line">       --no-use-server-timestamps  don't set the local file's timestamp by</span><br><span class="line">                                     the one on the server</span><br><span class="line">  -S,  --server-response           print server response</span><br><span class="line">       --spider                    don't download anything</span><br><span class="line">  -T,  --timeout=SECONDS           set all timeout values to SECONDS</span><br><span class="line">       --dns-timeout=SECS          set the DNS lookup timeout to SECS</span><br><span class="line">       --connect-timeout=SECS      set the connect timeout to SECS</span><br><span class="line">       --read-timeout=SECS         set the read timeout to SECS</span><br><span class="line">  -w,  --wait=SECONDS              wait SECONDS between retrievals</span><br><span class="line">       --waitretry=SECONDS         wait 1..SECONDS between retries of a retrieval</span><br><span class="line">       --random-wait               wait from 0.5*WAIT...1.5*WAIT secs between retrievals</span><br><span class="line">       --no-proxy                  explicitly turn off proxy</span><br><span class="line">  -Q,  --quota=NUMBER              set retrieval quota to NUMBER</span><br><span class="line">       --bind-address=ADDRESS      bind to ADDRESS (hostname or IP) on local host</span><br><span class="line">       --limit-rate=RATE           limit download rate to RATE</span><br><span class="line">       --no-dns-cache              disable caching DNS lookups</span><br><span class="line">       --restrict-file-names=OS    restrict chars in file names to ones OS allows</span><br><span class="line">       --ignore-case               ignore case when matching files/directories</span><br><span class="line">  -4,  --inet4-only                connect only to IPv4 addresses</span><br><span class="line">  -6,  --inet6-only                connect only to IPv6 addresses</span><br><span class="line">       --prefer-family=FAMILY      connect first to addresses of specified family,</span><br><span class="line">                                     one of IPv6, IPv4, or none</span><br><span class="line">       --user=USER                 set both ftp and http user to USER</span><br><span class="line">       --password=PASS             set both ftp and http password to PASS</span><br><span class="line">       --ask-password              prompt for passwords</span><br><span class="line">       --no-iri                    turn off IRI support</span><br><span class="line">       --local-encoding=ENC        use ENC as the local encoding for IRIs</span><br><span class="line">       --remote-encoding=ENC       use ENC as the default remote encoding</span><br><span class="line">       --unlink                    remove file before clobber</span><br><span class="line"></span><br><span class="line">Directories:</span><br><span class="line">  -nd, --no-directories            don't create directories</span><br><span class="line">  -x,  --force-directories         force creation of directories</span><br><span class="line">  -nH, --no-host-directories       don't create host directories</span><br><span class="line">       --protocol-directories      use protocol name in directories</span><br><span class="line">  -P,  --directory-prefix=PREFIX   save files to PREFIX/..</span><br><span class="line">       --cut-dirs=NUMBER           ignore NUMBER remote directory components</span><br><span class="line"></span><br><span class="line">HTTP options:</span><br><span class="line">       --http-user=USER            set http user to USER</span><br><span class="line">       --http-password=PASS        set http password to PASS</span><br><span class="line">       --no-cache                  disallow server-cached data</span><br><span class="line">       --default-page=NAME         change the default page name (normally</span><br><span class="line">                                     this is 'index.html'.)</span><br><span class="line">  -E,  --adjust-extension          save HTML/CSS documents with proper extensions</span><br><span class="line">       --ignore-length             ignore 'Content-Length' header field</span><br><span class="line">       --header=STRING             insert STRING among the headers</span><br><span class="line">       --max-redirect              maximum redirections allowed per page</span><br><span class="line">       --proxy-user=USER           set USER as proxy username</span><br><span class="line">       --proxy-password=PASS       set PASS as proxy password</span><br><span class="line">       --referer=URL               include 'Referer: URL' header in HTTP request</span><br><span class="line">       --save-headers              save the HTTP headers to file</span><br><span class="line">  -U,  --user-agent=AGENT          identify as AGENT instead of Wget/VERSION</span><br><span class="line">       --no-http-keep-alive        disable HTTP keep-alive (persistent connections)</span><br><span class="line">       --no-cookies                don't use cookies</span><br><span class="line">       --load-cookies=FILE         load cookies from FILE before session</span><br><span class="line">       --save-cookies=FILE         save cookies to FILE after session</span><br><span class="line">       --keep-session-cookies      load and save session (non-permanent) cookies</span><br><span class="line">       --post-data=STRING          use the POST method; send STRING as the data</span><br><span class="line">       --post-file=FILE            use the POST method; send contents of FILE</span><br><span class="line">       --method=HTTPMethod         use method "HTTPMethod" in the request</span><br><span class="line">       --body-data=STRING          send STRING as data. --method MUST be set</span><br><span class="line">       --body-file=FILE            send contents of FILE. --method MUST be set</span><br><span class="line">       --content-disposition       honor the Content-Disposition header when</span><br><span class="line">                                     choosing local file names (EXPERIMENTAL)</span><br><span class="line">       --content-on-error          output the received content on server errors</span><br><span class="line">       --auth-no-challenge         send Basic HTTP authentication information</span><br><span class="line">                                     without first waiting for the server's</span><br><span class="line">                                     challenge</span><br><span class="line"></span><br><span class="line">HTTPS (SSL/TLS) options:</span><br><span class="line">       --secure-protocol=PR        choose secure protocol, one of auto, SSLv2,</span><br><span class="line">                                     SSLv3, TLSv1 and PFS</span><br><span class="line">       --https-only                only follow secure HTTPS links</span><br><span class="line">       --no-check-certificate      don't validate the server's certificate</span><br><span class="line">       --certificate=FILE          client certificate file</span><br><span class="line">       --certificate-type=TYPE     client certificate type, PEM or DER</span><br><span class="line">       --private-key=FILE          private key file</span><br><span class="line">       --private-key-type=TYPE     private key type, PEM or DER</span><br><span class="line">       --ca-certificate=FILE       file with the bundle of CAs</span><br><span class="line">       --ca-directory=DIR          directory where hash list of CAs is stored</span><br><span class="line">       --crl-file=FILE             file with bundle of CRLs</span><br><span class="line">       --random-file=FILE          file with random data for seeding the SSL PRNG</span><br><span class="line">       --egd-file=FILE             file naming the EGD socket with random data</span><br><span class="line"></span><br><span class="line">HSTS options:</span><br><span class="line">       --no-hsts                   disable HSTS</span><br><span class="line">       --hsts-file                 path of HSTS database (will override default)</span><br><span class="line"></span><br><span class="line">FTP options:</span><br><span class="line">       --ftp-user=USER             set ftp user to USER</span><br><span class="line">       --ftp-password=PASS         set ftp password to PASS</span><br><span class="line">       --no-remove-listing         don't remove '.listing' files</span><br><span class="line">       --no-glob                   turn off FTP file name globbing</span><br><span class="line">       --no-passive-ftp            disable the "passive" transfer mode</span><br><span class="line">       --preserve-permissions      preserve remote file permissions</span><br><span class="line">       --retr-symlinks             when recursing, get linked-to files (not dir)</span><br><span class="line"></span><br><span class="line">FTPS options:</span><br><span class="line">       --ftps-implicit                 use implicit FTPS (default port is 990)</span><br><span class="line">       --ftps-resume-ssl               resume the SSL/TLS session started in the control connection when</span><br><span class="line">                                         opening a data connection</span><br><span class="line">       --ftps-clear-data-connection    cipher the control channel only; all the data will be in plaintext</span><br><span class="line">       --ftps-fallback-to-ftp          fall back to FTP if FTPS is not supported in the target server</span><br><span class="line">WARC options:</span><br><span class="line">       --warc-file=FILENAME        save request/response data to a .warc.gz file</span><br><span class="line">       --warc-header=STRING        insert STRING into the warcinfo record</span><br><span class="line">       --warc-max-size=NUMBER      set maximum size of WARC files to NUMBER</span><br><span class="line">       --warc-cdx                  write CDX index files</span><br><span class="line">       --warc-dedup=FILENAME       do not store records listed in this CDX file</span><br><span class="line">       --no-warc-compression       do not compress WARC files with GZIP</span><br><span class="line">       --no-warc-digests           do not calculate SHA1 digests</span><br><span class="line">       --no-warc-keep-log          do not store the log file in a WARC record</span><br><span class="line">       --warc-tempdir=DIRECTORY    location for temporary files created by the</span><br><span class="line">                                     WARC writer</span><br><span class="line"></span><br><span class="line">Recursive download:</span><br><span class="line">  -r,  --recursive                 specify recursive download</span><br><span class="line">  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for infinite)</span><br><span class="line">       --delete-after              delete files locally after downloading them</span><br><span class="line">  -k,  --convert-links             make links in downloaded HTML or CSS point to</span><br><span class="line">                                     local files</span><br><span class="line">       --convert-file-only         convert the file part of the URLs only (usually known as the basename)</span><br><span class="line">       --backups=N                 before writing file X, rotate up to N backup files</span><br><span class="line">  -K,  --backup-converted          before converting file X, back up as X.orig</span><br><span class="line">  -m,  --mirror                    shortcut for -N -r -l inf --no-remove-listing</span><br><span class="line">  -p,  --page-requisites           get all images, etc. needed to display HTML page</span><br><span class="line">       --strict-comments           turn on strict (SGML) handling of HTML comments</span><br><span class="line"></span><br><span class="line">Recursive accept/reject:</span><br><span class="line">  -A,  --accept=LIST               comma-separated list of accepted extensions</span><br><span class="line">  -R,  --reject=LIST               comma-separated list of rejected extensions</span><br><span class="line">       --accept-regex=REGEX        regex matching accepted URLs</span><br><span class="line">       --reject-regex=REGEX        regex matching rejected URLs</span><br><span class="line">       --regex-type=TYPE           regex type (posix|pcre)</span><br><span class="line">  -D,  --domains=LIST              comma-separated list of accepted domains</span><br><span class="line">       --exclude-domains=LIST      comma-separated list of rejected domains</span><br><span class="line">       --follow-ftp                follow FTP links from HTML documents</span><br><span class="line">       --follow-tags=LIST          comma-separated list of followed HTML tags</span><br><span class="line">       --ignore-tags=LIST          comma-separated list of ignored HTML tags</span><br><span class="line">  -H,  --span-hosts                go to foreign hosts when recursive</span><br><span class="line">  -L,  --relative                  follow relative links only</span><br><span class="line">  -I,  --include-directories=LIST  list of allowed directories</span><br><span class="line">       --trust-server-names        use the name specified by the redirection</span><br><span class="line">                                     URL's last component</span><br><span class="line">  -X,  --exclude-directories=LIST  list of excluded directories</span><br><span class="line">  -np, --no-parent                 don't ascend to the parent directory</span><br><span class="line"></span><br><span class="line">Mail bug reports and suggestions to &lt;bug-wget@gnu.org&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="활용-예"><a href="#활용-예" class="headerlink" title="활용 예"></a>활용 예</h3><p>영상 다운로드서버에 올라가있는 영상들이 정상적인지를 체크하기위해 한번씩 다운로드해준다.</p>
+<p><em>list.txt</em></p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span>/<span class="regexp">/111.111.11.1/assets</span><span class="regexp">/prod/</span><span class="number">1629</span>/ORIGINAL/<span class="number">1629_1504176178478</span>.ts</span><br><span class="line"><span class="symbol">http:</span>/<span class="regexp">/111.111.11.1/assets</span><span class="regexp">/prod/</span><span class="number">1630</span>/ORIGINAL/<span class="number">1630_1504176206826</span>.ts</span><br><span class="line"><span class="symbol">http:</span>/<span class="regexp">/1111.111.11.1/assets</span><span class="regexp">/prod/</span><span class="number">1672</span>/ORIGINAL/<span class="number">1672_1505466475322</span>.ts</span><br><span class="line">엄청많아 <span class="number">100</span>개가 넘어 ..</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -i list.txt -o <span class="built_in">log</span> --no-verbose</span><br></pre></td></tr></table></figure>
+<p>list에 써져있는 파일들을 차례대로 다운로드한 후 로그를 남긴다(성공여부만 필요)</p>
+<p>-i 인풋<br>-o 아웃풋<br>–no-verbose 다 남길 필요없다.</p>
+<p><em>log</em><br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">17</span>:<span class="number">53</span> URL:http://<span class="number">111.111.11.1</span>/assets/prod/<span class="number">1629</span>/ORIGINAL/<span class="number">1629</span>_<span class="number">1504176178478</span>.ts [<span class="number">16958540</span>/<span class="number">16958540</span>] -&gt; "<span class="number">1629</span>_<span class="number">1504176178478</span>.ts.<span class="number">2</span>" [<span class="number">1</span>]</span><br><span class="line"><span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">17</span>:<span class="number">56</span> URL:http://<span class="number">111.111.11.1</span>/assets/prod/<span class="number">1630</span>/ORIGINAL/<span class="number">1630</span>_<span class="number">1504176206826</span>.ts [<span class="number">32955836</span>/<span class="number">32955836</span>] -&gt; "<span class="number">1630</span>_<span class="number">1504176206826</span>.ts.<span class="number">2</span>" [<span class="number">1</span>]</span><br><span class="line"><span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">17</span>:<span class="number">59</span> URL:http://<span class="number">111.111.11.1</span>/assets/prod/<span class="number">1672</span>/ORIGINAL/<span class="number">1672</span>_15<span class="number">05466475322</span>.ts [<span class="number">32954520</span>/<span class="number">32954520</span>] -&gt; "<span class="number">1672</span>_15<span class="number">05466475322</span>.ts.<span class="number">2</span>" [<span class="number">1</span>]</span><br><span class="line"><span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">18</span>:<span class="number">03</span> URL:http://<span class="number">111.111.11.1</span>/assets/uplus-assets/prod/<span class="number">1686</span>/ORIGINAL/<span class="number">1686</span>_15<span class="number">05969267788</span>.ts [<span class="number">32950572</span>/<span class="number">32950572</span>] -&gt; "<span class="number">1686</span>_15<span class="number">05969267788</span>.ts.<span class="number">2</span>" [<span class="number">1</span>]</span><br><span class="line">http://<span class="number">111.111.11.1</span>/assets/prod/<span class="number">1692</span>/ORIGINAL/<span class="number">1692</span>_15060<span class="number">23232326203376</span>.ts:</span><br><span class="line"><span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">18</span>:<span class="number">03</span> ERROR <span class="number">404</span>: Not Found.</span><br><span class="line">FINISHED --<span class="number">2017-12-22</span> <span class="number">17</span>:<span class="number">18</span>:<span class="number">03</span>--</span><br><span class="line">Total wall clock time: <span class="number">12</span>s</span><br><span class="line">Downloaded: <span class="number">4</span> files, <span class="number">110</span>M in <span class="number">11</span>s (<span class="number">9</span>.<span class="number">61</span> MB/s)</span><br></pre></td></tr></table></figure></p>
+<p>없으면 저렇게 404 Not Found 뜬다.</p>
+<p>20개정도 브라우저에 입력하다가 빡쳐서 찾았다.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>, <a class="has-link-grey -link" href="/tags/Wget/">Wget</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/01/11/js-es6-three-dots/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">자바스크립트 3점 표기법</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/10/26/js-interview-example/">
+                <span class="level-item">자바스크립트 코딩 인터뷰 정리</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ddalpange.github.io/2017/12/22/linux-wget/';
+        this.page.identifier = '2017/12/22/linux-wget/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'https-ddalpange-github-com' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/profile.jpeg" alt="Yohan Kim">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Yohan Kim
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Full-Stack Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            45
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            56
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                팔로우</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/ddalpange">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/rss2.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    카탈로그
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#설명">
+        <span class="has-mr-6">1</span>
+        <span>설명</span>
+        </a></li><li>
+        <a class="is-flex" href="#도움말">
+        <span class="has-mr-6">2</span>
+        <span>도움말</span>
+        </a></li><li>
+        <a class="is-flex" href="#활용-예">
+        <span class="has-mr-6">3</span>
+        <span>활용 예</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            링크
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Firebase/">
+            <span class="level-start">
+                <span class="level-item">Firebase</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">15</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Node/">
+            <span class="level-start">
+                <span class="level-item">Node</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Redux/">
+            <span class="level-start">
+                <span class="level-item">Redux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/RxJS/">
+            <span class="level-start">
+                <span class="level-item">RxJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SimpleMemo/">
+            <span class="level-start">
+                <span class="level-item">SimpleMemo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/UI-UX/">
+            <span class="level-start">
+                <span class="level-item">UI/UX</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/경험/">
+            <span class="level-start">
+                <span class="level-item">경험</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/블로그/">
+            <span class="level-start">
+                <span class="level-item">블로그</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/2018년/" style="font-size: 10px;">2018년</a> <a href="/tags/Algorithm/" style="font-size: 11.67px;">Algorithm</a> <a href="/tags/Angular/" style="font-size: 18.33px;">Angular</a> <a href="/tags/Chart/" style="font-size: 10px;">Chart</a> <a href="/tags/ClipboardJS/" style="font-size: 10px;">ClipboardJS</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/DeepCopy/" style="font-size: 10px;">DeepCopy</a> <a href="/tags/Deploy/" style="font-size: 10px;">Deploy</a> <a href="/tags/ES2015/" style="font-size: 10px;">ES2015</a> <a href="/tags/ES6/" style="font-size: 11.67px;">ES6</a> <a href="/tags/Encoding/" style="font-size: 10px;">Encoding</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Firebase/" style="font-size: 13.33px;">Firebase</a> <a href="/tags/Flux/" style="font-size: 11.67px;">Flux</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hangul/" style="font-size: 10px;">Hangul</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/Ionic/" style="font-size: 16.67px;">Ionic</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/N/" style="font-size: 10px;">N</a> <a href="/tags/NVM/" style="font-size: 11.67px;">NVM</a> <a href="/tags/Node/" style="font-size: 11.67px;">Node</a> <a href="/tags/Observable/" style="font-size: 10px;">Observable</a> <a href="/tags/Observer/" style="font-size: 10px;">Observer</a> <a href="/tags/OpenSource/" style="font-size: 10px;">OpenSource</a> <a href="/tags/Prettier/" style="font-size: 10px;">Prettier</a> <a href="/tags/Programming/" style="font-size: 11.67px;">Programming</a> <a href="/tags/PureFunction/" style="font-size: 10px;">PureFunction</a> <a href="/tags/Redux/" style="font-size: 11.67px;">Redux</a> <a href="/tags/RxJS/" style="font-size: 11.67px;">RxJS</a> <a href="/tags/ShallowCopy/" style="font-size: 10px;">ShallowCopy</a> <a href="/tags/SimpleMemo/" style="font-size: 15px;">SimpleMemo</a> <a href="/tags/StackEdit/" style="font-size: 10px;">StackEdit</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Subject/" style="font-size: 10px;">Subject</a> <a href="/tags/Subscription/" style="font-size: 10px;">Subscription</a> <a href="/tags/Tistory/" style="font-size: 10px;">Tistory</a> <a href="/tags/Travis/" style="font-size: 10px;">Travis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Underscore/" style="font-size: 10px;">Underscore</a> <a href="/tags/Unsubscribe/" style="font-size: 10px;">Unsubscribe</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/VSCODE/" style="font-size: 10px;">VSCODE</a> <a href="/tags/Wget/" style="font-size: 10px;">Wget</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/spread/" style="font-size: 10px;">spread</a> <a href="/tags/threeDots/" style="font-size: 10px;">threeDots</a> <a href="/tags/노루/" style="font-size: 10px;">노루</a> <a href="/tags/목업/" style="font-size: 10px;">목업</a> <a href="/tags/블로그/" style="font-size: 10px;">블로그</a> <a href="/tags/이직/" style="font-size: 10px;">이직</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/Logo.png" alt="리눅스 wget 명령어" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 ddalpange&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ddalpange.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

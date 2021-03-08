@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.7.1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>간단한 메모장 만들기 2 - 프로토타이핑 - 달팽이 개발일지</title>
+
+
+    <meta name="description" content="포스트 2에서는 아이오닉 컴포넌트를 활용하여 프로토 타이핑을 진행하도록 하겠습니다.">
+<meta name="keywords" content="Javascript,Angular,Ionic,SimpleMemo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="간단한 메모장 만들기 2 - 프로토타이핑">
+<meta property="og:url" content="https://ddalpange.github.io/2017/10/03/project-make-simple-memo-2/index.html">
+<meta property="og:site_name" content="달팽이 개발일지">
+<meta property="og:description" content="포스트 2에서는 아이오닉 컴포넌트를 활용하여 프로토 타이핑을 진행하도록 하겠습니다.">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://ddalpange.github.io/images/memo/memoBanner.png">
+<meta property="og:updated_time" content="2021-03-08T19:12:21.225Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="간단한 메모장 만들기 2 - 프로토타이핑">
+<meta name="twitter:description" content="포스트 2에서는 아이오닉 컴포넌트를 활용하여 프로토 타이핑을 진행하도록 하겠습니다.">
+<meta name="twitter:image" content="https://ddalpange.github.io/images/memo/memoBanner.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="간단한 메모장 만들기 2 - 프로토타이핑" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88902574-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-88902574-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Logo.png" alt="간단한 메모장 만들기 2 - 프로토타이핑" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/images/memo/memoBanner.png" alt="간단한 메모장 만들기 2 - 프로토타이핑">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-10-03T13:48:55.000Z">2017-10-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/SimpleMemo/">SimpleMemo</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12분 읽기 (대략 1831 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                간단한 메모장 만들기 2 - 프로토타이핑
+            
+        </h1>
+        <div class="content">
+            <p>포스트 2에서는 아이오닉 컴포넌트를 활용하여 프로토 타이핑을 진행하도록 하겠습니다.</p>
+<a id="more"></a>
+<h3 id="시작하기-전에"><a href="#시작하기-전에" class="headerlink" title="시작하기 전에."></a>시작하기 전에.</h3><p>먼저 아이오닉 프로젝트가 없으신 분들은 이전 포스트를 참고하여 만들어주세요.</p>
+<p><a href="https://ddalpange.github.io/2017/07/09/%EA%B0%84%EB%8B%A8%ED%95%9C-%EB%A9%94%EB%AA%A8%EC%9E%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">간단한 메모장 만들기 1</a></p>
+<h3 id="페이지-생성을-시작하겠습니다"><a href="#페이지-생성을-시작하겠습니다" class="headerlink" title="페이지 생성을 시작하겠습니다."></a>페이지 생성을 시작하겠습니다.</h3><p>루트프로젝트에서 쉘 또는 명령 프롬프트를 실행한 후 아래의 명령어를 입력하여주세요.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ionic generate page sign-up</span><br><span class="line">$ ionic generate page sign-in</span><br><span class="line">$ ionic generate page memo-list</span><br><span class="line">$ ionic generate page memo-detail</span><br><span class="line">$ ionic generate page memo-create</span><br></pre></td></tr></table></figure>
+<p>이 정도면 충분할것 같네요. 부족한 페이지가 있으면 작업중에 생성하도록 하겠습니다.</p>
+<p>루트 모듈(app.module.ts)에 위 5개의 페이지를 임포트하겠습니다.</p>
+<figure class="highlight typescript"><figcaption><span>src/app/app.module.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 주의 !! Ionic 2버전입니다.</span></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HttpModule &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; ErrorHandler, NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicApp, IonicErrorHandler, IonicModule &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SplashScreen &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/splash-screen'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StatusBar &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/status-bar'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; MyApp &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SignInPage &#125; <span class="keyword">from</span> <span class="string">'./../pages/sign-in/sign-in'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoDetailPage &#125; <span class="keyword">from</span> <span class="string">'./../pages/memo-detail/memo-detail'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoListPage &#125; <span class="keyword">from</span> <span class="string">'./../pages/memo-list/memo-list'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SignUpPage &#125; <span class="keyword">from</span> <span class="string">'../pages/sign-up/sign-up'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoCreatePage &#125; <span class="keyword">from</span> <span class="string">'../pages/memo-create/memo-create'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPages</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [</span><br><span class="line">    MyApp,</span><br><span class="line">    SignInPage,</span><br><span class="line">    SignUpPage,</span><br><span class="line">    MemoListPage,</span><br><span class="line">    MemoDetailPage,</span><br><span class="line">    MemoCreatePage</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: getPages(),</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    IonicModule.forRoot(MyApp),</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [IonicApp],</span><br><span class="line">  entryComponents: getPages(),</span><br><span class="line">  providers: [</span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    &#123;provide: ErrorHandler, useClass: IonicErrorHandler&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>모든 페이지를 리턴해주는 <em>getPages()</em> 라는 함수를 작성하고, declations, entryComponents 두 속성에 값을 넣어줍니다.</p>
+<p><strong>잠깐! 왜 페이지 별로 모듈을 따로 빼지 않는것이죠 ?</strong></p>
+<blockquote>
+<p>AngularJS의 기본 단위는 <strong>모듈</strong>입니다. 그럼으로 상위 모듈이 모든 페이지(컴포넌트)를 바로 임포트하여 선언하는건 옳은 방식이 아니죠. 일단은 편의성을 위해 루트 모듈에 모든 컴포넌트를 선언해놓았지만, 나중에 폴더구조를 바꾸면서 모든 페이지(컴포넌트)는 각각의 모듈을 가지도록 바꿀 것이니 걱정하지 마세요.</p>
+</blockquote>
+<!-- more -->
+<p><strong>정정합니다.</strong></p>
+<blockquote>
+<p>Ionic3 업데이트로 각각의 페이지는 모듈을 가지도록 바뀌어서 기본적으로 게으른 로딩(lazy loading)을 지원하도록 바뀌었습니다. cli를 통해 페이지를 만들 때 모듈 파일이 같이 있다면 앱 모듈에서 바로 페이지를 declation 할 수 없습니다. 각각의 모듈을 임포트해야하죠.</p>
+</blockquote>
+<figure class="highlight typescript"><figcaption><span>src/app/app.module.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; SignUpPageModule &#125; <span class="keyword">from</span> <span class="string">'./../pages/sign-up/sign-up.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SignInPageModule &#125; <span class="keyword">from</span> <span class="string">'./../pages/sign-in/sign-in.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoListPageModule &#125; <span class="keyword">from</span> <span class="string">'./../pages/memo-list/memo-list.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoDetailPageModule &#125; <span class="keyword">from</span> <span class="string">'./../pages/memo-detail/memo-detail.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoCreatePageModule &#125; <span class="keyword">from</span> <span class="string">'./../pages/memo-create/memo-create.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HttpModule &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ErrorHandler, NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicApp, IonicErrorHandler, IonicModule &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SplashScreen &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/splash-screen'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StatusBar &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/status-bar'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MyApp &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: [MyApp],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    IonicModule.forRoot(MyApp),</span><br><span class="line">    MemoCreatePageModule,</span><br><span class="line">    MemoDetailPageModule,</span><br><span class="line">    MemoListPageModule,</span><br><span class="line">    SignInPageModule,</span><br><span class="line">    SignUpPageModule</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [IonicApp],</span><br><span class="line">  entryComponents: [MyApp],</span><br><span class="line">  providers: [</span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    &#123;provide: ErrorHandler, useClass: IonicErrorHandler&#125;,</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>잊지마세요!</strong><br>루트모듈만 바꾸면 되는게 아닙니다. 루트 컴포넌트(app.component.ts)에 가서 루트 페이지(시작 페이지)도 같이 바꿔줘야합니다.</p>
+<figure class="highlight typescript"><figcaption><span>src/app/app.component.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; SignInPage &#125; <span class="keyword">from</span> <span class="string">'./../pages/sign-in/sign-in'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Platform &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; StatusBar &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/status-bar'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SplashScreen &#125; <span class="keyword">from</span> <span class="string">'@ionic-native/splash-screen'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  templateUrl: <span class="string">'app.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MyApp &#123;</span><br><span class="line">  rootPage:<span class="built_in">any</span> = SiginInPage;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen</span>) &#123;</span><br><span class="line">    platform.ready().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// Okay, so the platform is ready and our plugins are available.</span></span><br><span class="line">      <span class="comment">// Here you can do any higher level native things you might need.</span></span><br><span class="line">      statusBar.styleDefault();</span><br><span class="line">      splashScreen.hide();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>여기까지 하셨으면 반은 성공한겁니다 !</p>
+<h3 id="퍼블리싱을-시작하겠습니다"><a href="#퍼블리싱을-시작하겠습니다" class="headerlink" title="퍼블리싱을 시작하겠습니다."></a>퍼블리싱을 시작하겠습니다.</h3><h4 id="로그인페이지-sign-in"><a href="#로그인페이지-sign-in" class="headerlink" title="로그인페이지 (sign-in)"></a>로그인페이지 (sign-in)</h4><figure class="highlight typescript"><figcaption><span>src/pages/sign-in/sign-in.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicPage, NavController, NavParams &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; SignUpPage &#125; <span class="keyword">from</span> <span class="string">'./../sign-up/sign-up'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoListPage &#125; <span class="keyword">from</span> <span class="string">'./../memo-list/memo-list'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@IonicPage</span>()</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-sign-in'</span>,</span><br><span class="line">  templateUrl: <span class="string">'sign-in.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> SignInPage &#123;</span><br><span class="line"></span><br><span class="line">  emailAddress: <span class="built_in">string</span>;</span><br><span class="line">  password: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> navCtrl: NavController, </span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> navParams: NavParams,</span></span><br><span class="line"><span class="params">  </span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ionViewDidLoad() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'ionViewDidLoad SignInPage'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickDDalpange() &#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"https://ddalpange.github.io"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onChangeEmailAddress(event: <span class="built_in">any</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.emailAddress = event.target.value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onChangePassword(event: <span class="built_in">any</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.password = event.target.value;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  onClickEmailLogIn() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.setRoot(MemoListPage);    </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickFacebookLogin() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickSignUp() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(SignUpPage);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>src/pages/sign-in/sign-in.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-content</span> <span class="attr">padding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"image-wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/gyul.png"</span> </span></span><br><span class="line"><span class="tag">      (<span class="attr">click</span>)=<span class="string">"onClickDDalpange()"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>달팽이의 메모 앱<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"이메일"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"비밀번호"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span> <span class="attr">color</span>=<span class="string">"light"</span> (<span class="attr">click</span>)=<span class="string">"onClickEmailLogIn()"</span>&gt;</span>이메일 로그인<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span> <span class="attr">color</span>=<span class="string">"primary"</span> (<span class="attr">click</span>)=<span class="string">"onClickFacebookLogin()"</span>&gt;</span>페이스북 로그인<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"sign-up-text"</span> (<span class="attr">click</span>)=<span class="string">"onClickSignUp()"</span>&gt;</span>계정이 없으신가요?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><figcaption><span>src/pages/sign-in/sign-in.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">page-sign-in &#123;</span><br><span class="line">  <span class="selector-class">.image-wrap</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    &gt;<span class="selector-tag">img</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">80%</span>;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.sign-up-text</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="회원가입-페이지-sign-up"><a href="#회원가입-페이지-sign-up" class="headerlink" title="회원가입 페이지 (sign-up)"></a>회원가입 페이지 (sign-up)</h4><figure class="highlight typescript"><figcaption><span>src/pages/sign-up/sign-up.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicPage, NavController, NavParams &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Generated class for the SignUpPage page.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * See http://ionicframework.com/docs/components/#navigation for more info</span></span><br><span class="line"><span class="comment"> * on Ionic pages and navigation.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@IonicPage</span>()</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-sign-up'</span>,</span><br><span class="line">  templateUrl: <span class="string">'sign-up.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> SignUpPage &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController, <span class="keyword">public</span> navParams: NavParams</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickDDalpange() &#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href = <span class="string">"https://ddalpange.github.io"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickSignUp() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();    </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickNavBack() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>src/pages/sign-up/sign-up.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-content</span> <span class="attr">padding</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"image-wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/gyul.png"</span> </span></span><br><span class="line"><span class="tag">      (<span class="attr">click</span>)=<span class="string">"onClickDDalpange()"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>달팽이의 메모 앱<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"이메일"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"비밀번호"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span> <span class="attr">color</span>=<span class="string">"light"</span> (<span class="attr">click</span>)=<span class="string">"onClickSignUp()"</span>&gt;</span>가입하기<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">block</span> <span class="attr">color</span>=<span class="string">"danger"</span> (<span class="attr">click</span>)=<span class="string">"onClickNavBack()"</span>&gt;</span>뒤로가기<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><figcaption><span>src/pages/sign-up/sign-up.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">page-sign-up &#123;</span><br><span class="line">  <span class="selector-class">.image-wrap</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    &gt;<span class="selector-tag">img</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">80%</span>;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="메모리스트-페이지-memo-list"><a href="#메모리스트-페이지-memo-list" class="headerlink" title="메모리스트 페이지 (memo-list)"></a>메모리스트 페이지 (memo-list)</h4><figure class="highlight typescript"><figcaption><span>src/pages/memo-list/memo-list.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicPage, NavController, NavParams &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; MemoCreatePage &#125; <span class="keyword">from</span> <span class="string">'./../memo-create/memo-create'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoDetailPage &#125; <span class="keyword">from</span> <span class="string">'./../memo-detail/memo-detail'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@IonicPage</span>()</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-memo-list'</span>,</span><br><span class="line">  templateUrl: <span class="string">'memo-list.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MemoListPage &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController, <span class="keyword">public</span> navParams: NavParams</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ionViewDidLoad() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'ionViewDidLoad MemoListPage'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">   onClickViewMemoDetail() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(MemoDetailPage);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClickCreateMemo() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(MemoCreatePage);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>src/pages/memo-list/memo-list.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-navbar</span> <span class="attr">color</span>=<span class="string">"primary"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-title</span>&gt;</span>메모들<span class="tag">&lt;/<span class="name">ion-title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-navbar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ion-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-card</span> (<span class="attr">click</span>)=<span class="string">"onClickViewMemoDetail()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">      제목1</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">      내용내용내용내용내용내용내용내용내용내용내용내용</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-card</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-card</span> (<span class="attr">click</span>)=<span class="string">"onClickViewMemoDetail()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">      제목2</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">      내용내용내용내용내용내용내용내용내용내용내용내용</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-card</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-card</span> (<span class="attr">click</span>)=<span class="string">"onClickViewMemoDetail()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">      제목3</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">      내용내용내용내용내용내용내용내용내용내용내용내용</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-card</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-fab</span> <span class="attr">right</span> <span class="attr">bottom</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-fab</span> <span class="attr">icon-only</span>&gt;</span><span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"add"</span> <span class="attr">big</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-fab</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><figcaption><span>src/pages/memo-list/memo-list.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">page-memo-list &#123;</span><br><span class="line">  <span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.card-header</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.card-content</span> &#123;</span><br><span class="line">    <span class="attribute">overflow-y</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">    <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="메모-상세-페이지-memo-detail"><a href="#메모-상세-페이지-memo-detail" class="headerlink" title="메모 상세 페이지 (memo-detail)"></a>메모 상세 페이지 (memo-detail)</h4><figure class="highlight typescript"><figcaption><span>src/pages/memo-detail/memo-detail.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicPage, NavController, NavParams &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; MemoCreatePage &#125; <span class="keyword">from</span> <span class="string">'./../memo-create/memo-create'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@IonicPage</span>()</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-memo-detail'</span>,</span><br><span class="line">  templateUrl: <span class="string">'memo-detail.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MemoDetailPage &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController, <span class="keyword">public</span> navParams: NavParams</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onOpenEditMemo() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(MemoCreatePage);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onDeleteMemo() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>src/pages/memo-detail/memo-detail.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-navbar</span> <span class="attr">color</span>=<span class="string">"danger"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-title</span>&gt;</span>메모 상세<span class="tag">&lt;/<span class="name">ion-title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-buttons</span> <span class="attr">end</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">icon-only</span> (<span class="attr">click</span>)=<span class="string">"onDeleteMemo()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"trash"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-button</span> <span class="attr">icon-only</span> (<span class="attr">click</span>)=<span class="string">"onOpenEditMemo()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"hammer"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-buttons</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-navbar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ion-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-card</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>메모 제목<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>메모 내용<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"etc"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>저자<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          메모 저자</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>발행일<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          메모 발행일</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>최근 수정일<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          메모 최근 수정일</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-card-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-card</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><figcaption><span>src/pages/memo-detail/memo-detail.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">page-memo-detail &#123;</span><br><span class="line">  <span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.card-header</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.etc</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: right;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.8em</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#dedede</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="메모-만들기-페이지-memo-create"><a href="#메모-만들기-페이지-memo-create" class="headerlink" title="메모 만들기 페이지 (memo-create)"></a>메모 만들기 페이지 (memo-create)</h4><figure class="highlight typescript"><figcaption><span>src/pages/memo-create/memo-create.ts</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IonicPage, NavController, NavParams &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@IonicPage</span>()</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-memo-create'</span>,</span><br><span class="line">  templateUrl: <span class="string">'memo-create.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MemoCreatePage &#123;</span><br><span class="line"></span><br><span class="line">  title: <span class="built_in">string</span>;</span><br><span class="line">  contents: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController, <span class="keyword">public</span> navParams: NavParams</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onChangeTitle(event: KeyboardEvent) &#123;</span><br><span class="line">    <span class="keyword">this</span>.title = event.target[<span class="string">'value'</span>];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onChangeContents(event: KeyboardEvent) &#123;</span><br><span class="line">    <span class="keyword">this</span>.contents = event.target[<span class="string">'value'</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  onSaveMemo() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>src/pages/memo-create/memo-create.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-navbar</span> <span class="attr">color</span>=<span class="string">"secondary"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-title</span>&gt;</span>메모 만들기<span class="tag">&lt;/<span class="name">ion-title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-navbar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ion-content</span> <span class="attr">padding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-input</span> <span class="attr">placeholder</span>=<span class="string">"제목을 입력해주세요."</span> [<span class="attr">value</span>]=<span class="string">"title"</span> (<span class="attr">change</span>)=<span class="string">"onChangeTitle($event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-input</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-textarea</span> <span class="attr">rows</span>=<span class="string">"50"</span> <span class="attr">placeholder</span>=<span class="string">"내용을 입력해 주시겠어요 ?"</span> [<span class="attr">value</span>]=<span class="string">"contents"</span> (<span class="attr">change</span>)=<span class="string">"onChangeContents($event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-textarea</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-fab</span> <span class="attr">right</span> <span class="attr">bottom</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">ion-fab</span> <span class="attr">icon-only</span> <span class="attr">color</span>=<span class="string">"secondary"</span> (<span class="attr">click</span>)=<span class="string">"onSaveMemo()"</span>&gt;</span><span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">name</span>=<span class="string">"checkmark"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-fab</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><figcaption><span>src/pages/memo-create/memo-create.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">page-memo-create &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/memo/sign-in-page.png" alt="로그인 페이지"><br><img src="/images/memo/sign-up-page.png" alt="회원가입 페이지"><br><img src="/images/memo/memo-list-page.png" alt="메모 리스트 페이지"><br><img src="/images/memo/memo-detail-page.png" alt="메모 상세 페이지"><br><img src="/images/memo/memo-create-page.png" alt="메모 만들기 페이지"></p>
+<hr>
+<p>참고 링크</p>
+<ul>
+<li><a href="https://github.com/ddalpange/simple-memo" rel="external nofollow noopener noreferrer" target="_blank">해당 포스트에 작성된 모든 코드는 여기에 있습니다!</a></li>
+<li><a href="https://memo-28314.firebaseapp.com" rel="external nofollow noopener noreferrer" target="_blank">해당 프로젝트는 여기서 볼 수 있습니다 !!</a></li>
+</ul>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjAwMzg1OTM4Nyw2MzYyODk5XX0=
+-->
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Angular/">Angular</a>, <a class="has-link-grey -link" href="/tags/Ionic/">Ionic</a>, <a class="has-link-grey -link" href="/tags/Javascript/">Javascript</a>, <a class="has-link-grey -link" href="/tags/SimpleMemo/">SimpleMemo</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/10/03/project-make-simple-memo-3/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">간단한 메모장 만들기 3 - 목데이터 사용</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/10/03/project-make-simple-memo-1/">
+                <span class="level-item">간단한 메모장 만들기 1</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ddalpange.github.io/2017/10/03/project-make-simple-memo-2/';
+        this.page.identifier = '2017/10/03/project-make-simple-memo-2/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'https-ddalpange-github-com' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/profile.jpeg" alt="Yohan Kim">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Yohan Kim
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Full-Stack Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            45
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            56
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                팔로우</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/ddalpange">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/rss2.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    카탈로그
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#시작하기-전에">
+        <span class="has-mr-6">1</span>
+        <span>시작하기 전에.</span>
+        </a></li><li>
+        <a class="is-flex" href="#페이지-생성을-시작하겠습니다">
+        <span class="has-mr-6">2</span>
+        <span>페이지 생성을 시작하겠습니다.</span>
+        </a></li><li>
+        <a class="is-flex" href="#퍼블리싱을-시작하겠습니다">
+        <span class="has-mr-6">3</span>
+        <span>퍼블리싱을 시작하겠습니다.</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#로그인페이지-sign-in">
+        <span class="has-mr-6">3.1</span>
+        <span>로그인페이지 (sign-in)</span>
+        </a></li><li>
+        <a class="is-flex" href="#회원가입-페이지-sign-up">
+        <span class="has-mr-6">3.2</span>
+        <span>회원가입 페이지 (sign-up)</span>
+        </a></li><li>
+        <a class="is-flex" href="#메모리스트-페이지-memo-list">
+        <span class="has-mr-6">3.3</span>
+        <span>메모리스트 페이지 (memo-list)</span>
+        </a></li><li>
+        <a class="is-flex" href="#메모-상세-페이지-memo-detail">
+        <span class="has-mr-6">3.4</span>
+        <span>메모 상세 페이지 (memo-detail)</span>
+        </a></li><li>
+        <a class="is-flex" href="#메모-만들기-페이지-memo-create">
+        <span class="has-mr-6">3.5</span>
+        <span>메모 만들기 페이지 (memo-create)</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            링크
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Firebase/">
+            <span class="level-start">
+                <span class="level-item">Firebase</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">15</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Node/">
+            <span class="level-start">
+                <span class="level-item">Node</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Redux/">
+            <span class="level-start">
+                <span class="level-item">Redux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/RxJS/">
+            <span class="level-start">
+                <span class="level-item">RxJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SimpleMemo/">
+            <span class="level-start">
+                <span class="level-item">SimpleMemo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/UI-UX/">
+            <span class="level-start">
+                <span class="level-item">UI/UX</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/경험/">
+            <span class="level-start">
+                <span class="level-item">경험</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/블로그/">
+            <span class="level-start">
+                <span class="level-item">블로그</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/2018년/" style="font-size: 10px;">2018년</a> <a href="/tags/Algorithm/" style="font-size: 11.67px;">Algorithm</a> <a href="/tags/Angular/" style="font-size: 18.33px;">Angular</a> <a href="/tags/Chart/" style="font-size: 10px;">Chart</a> <a href="/tags/ClipboardJS/" style="font-size: 10px;">ClipboardJS</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/DeepCopy/" style="font-size: 10px;">DeepCopy</a> <a href="/tags/Deploy/" style="font-size: 10px;">Deploy</a> <a href="/tags/ES2015/" style="font-size: 10px;">ES2015</a> <a href="/tags/ES6/" style="font-size: 11.67px;">ES6</a> <a href="/tags/Encoding/" style="font-size: 10px;">Encoding</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Firebase/" style="font-size: 13.33px;">Firebase</a> <a href="/tags/Flux/" style="font-size: 11.67px;">Flux</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hangul/" style="font-size: 10px;">Hangul</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/Ionic/" style="font-size: 16.67px;">Ionic</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/N/" style="font-size: 10px;">N</a> <a href="/tags/NVM/" style="font-size: 11.67px;">NVM</a> <a href="/tags/Node/" style="font-size: 11.67px;">Node</a> <a href="/tags/Observable/" style="font-size: 10px;">Observable</a> <a href="/tags/Observer/" style="font-size: 10px;">Observer</a> <a href="/tags/OpenSource/" style="font-size: 10px;">OpenSource</a> <a href="/tags/Prettier/" style="font-size: 10px;">Prettier</a> <a href="/tags/Programming/" style="font-size: 11.67px;">Programming</a> <a href="/tags/PureFunction/" style="font-size: 10px;">PureFunction</a> <a href="/tags/Redux/" style="font-size: 11.67px;">Redux</a> <a href="/tags/RxJS/" style="font-size: 11.67px;">RxJS</a> <a href="/tags/ShallowCopy/" style="font-size: 10px;">ShallowCopy</a> <a href="/tags/SimpleMemo/" style="font-size: 15px;">SimpleMemo</a> <a href="/tags/StackEdit/" style="font-size: 10px;">StackEdit</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Subject/" style="font-size: 10px;">Subject</a> <a href="/tags/Subscription/" style="font-size: 10px;">Subscription</a> <a href="/tags/Tistory/" style="font-size: 10px;">Tistory</a> <a href="/tags/Travis/" style="font-size: 10px;">Travis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Underscore/" style="font-size: 10px;">Underscore</a> <a href="/tags/Unsubscribe/" style="font-size: 10px;">Unsubscribe</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/VSCODE/" style="font-size: 10px;">VSCODE</a> <a href="/tags/Wget/" style="font-size: 10px;">Wget</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/spread/" style="font-size: 10px;">spread</a> <a href="/tags/threeDots/" style="font-size: 10px;">threeDots</a> <a href="/tags/노루/" style="font-size: 10px;">노루</a> <a href="/tags/목업/" style="font-size: 10px;">목업</a> <a href="/tags/블로그/" style="font-size: 10px;">블로그</a> <a href="/tags/이직/" style="font-size: 10px;">이직</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/Logo.png" alt="간단한 메모장 만들기 2 - 프로토타이핑" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 ddalpange&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ddalpange.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

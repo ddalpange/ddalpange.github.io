@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.7.1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>또 한번의 이직 - 달팽이 개발일지</title>
+
+
+    <meta name="description" content="1년을 갓 넘기고 잘 다니던 회사를 퇴사하였다. 프론트엔드 기술을 무시하는 정도가 심했고 마지막 즈음엔 프론트엔드 일이 거의 없다고 백엔드 개발을 진행했는데 그 기술의 수준이나 배움이 나 자신을 풀스택 개발자라고 주장하기엔 턱없이 모자랐다. 새로 개발하는 제품도 미래가 밝아 보이지 않았다.">
+<meta name="keywords" content="이직">
+<meta property="og:type" content="article">
+<meta property="og:title" content="또 한번의 이직">
+<meta property="og:url" content="https://ddalpange.github.io/2019/04/25/change-company/index.html">
+<meta property="og:site_name" content="달팽이 개발일지">
+<meta property="og:description" content="1년을 갓 넘기고 잘 다니던 회사를 퇴사하였다. 프론트엔드 기술을 무시하는 정도가 심했고 마지막 즈음엔 프론트엔드 일이 거의 없다고 백엔드 개발을 진행했는데 그 기술의 수준이나 배움이 나 자신을 풀스택 개발자라고 주장하기엔 턱없이 모자랐다. 새로 개발하는 제품도 미래가 밝아 보이지 않았다.">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif">
+<meta property="og:updated_time" content="2021-03-08T19:12:21.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="또 한번의 이직">
+<meta name="twitter:description" content="1년을 갓 넘기고 잘 다니던 회사를 퇴사하였다. 프론트엔드 기술을 무시하는 정도가 심했고 마지막 즈음엔 프론트엔드 일이 거의 없다고 백엔드 개발을 진행했는데 그 기술의 수준이나 배움이 나 자신을 풀스택 개발자라고 주장하기엔 턱없이 모자랐다. 새로 개발하는 제품도 미래가 밝아 보이지 않았다.">
+<meta name="twitter:image" content="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="또 한번의 이직" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88902574-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-88902574-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/Logo.png" alt="또 한번의 이직" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    17분 읽기 (대략 2476 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                또 한번의 이직
+            
+        </h1>
+        <div class="content">
+            <p>1년을 갓 넘기고 잘 다니던 회사를 퇴사하였다. 프론트엔드 기술을 무시하는 정도가 심했고 마지막 즈음엔 프론트엔드 일이 거의 없다고 백엔드 개발을 진행했는데 그 기술의 수준이나 배움이 나 자신을 풀스택 개발자라고 주장하기엔 턱없이 모자랐다. 새로 개발하는 제품도 미래가 밝아 보이지 않았다.</p>
+<a id="more"></a>
+<p><img src="https://media.giphy.com/media/7zuzoS2MJ6ESMhqCR0/giphy.gif" alt="절이 싫으면 중이 떠나야한다. by 김요한"></p>
+<h2 id="나-자신을-PR-해보자"><a href="#나-자신을-PR-해보자" class="headerlink" title="나 자신을 PR 해보자"></a>나 자신을 PR 해보자</h2><p>나는 현재 22살이고 병역은 면제로 해결되었다. 약 2년 4개월 가량 프론트엔드 개발을 해왔으며 SPA의 개념과 웹에 대한 전반적인 이해도가 높다. Javascript 기술 스택으로 클라이언트 서버 쪽 구분 없이 전부 개발할 수 있다. 사실 말로 설명하면 이 사람의 기술 수준이 어느정도인지 내가 시장에서 어느정도의 평가를 받을지 감이 안온다. 로켓펀치, 원티드 등에 올라와 있는 프론트엔드 개발자의 자격요건과 우대사항을 테이블로 정리하여 내가 어느정도 수준인지 알아보자.</p>
+<p><strong>프론트엔드 자격요건 및 우대사항</strong></p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 프론트엔드 개발 경력 2년 이상 혹은 그에 준하는 실력을 갖추신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> TypeScript에 대한 깊은 이해가 있으신 분, GraphQL과 Apollo를 다루어 보신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> 웹이 아닌 환경에서 자바스크립트를 사용해본적이 있으신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> HTML, SCSS에 대한 이해가 있으신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> React, Vue, Angular를 사용한 SPA 개발 경험이 있으신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> 자신의 지식을 팀원들에게 전달할 수 있는 원활한 의사소통 능력을 가지신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> 웹 성능 측정에 능숙하고 렌더링 성능 개선을 위해 reflow-repaint 등을 이해하고 DOM 조작에 익숙하신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> Webpack/Bable/Rollup/Metro 등 JS bundling이나 JS AST를 이해하고 관련 작업에 익숙하신 분</li>
+<li style="list-style: none"><input type="checkbox" checked> 오픈소스에 커밋을 한 경험이 있으신 분.</li>
+<li style="list-style: none"><input type="checkbox" checked> 개발 만큼이나 문서화도 중요하다고 생각하시는 분</li>
+<li style="list-style: none"><input type="checkbox"> 자신의 프로젝트에 TDD를 적용하여 활용할 수 있는 분</li>
+<li style="list-style: none"><input type="checkbox"> SSR을 이해하고 사용해본 적이 있는 분</li>
+<li style="list-style: none"><input type="checkbox" checked> Flux 패턴을 이해하고 Redux나 Vuex 등을 활용한 경험</li>
+<li style="list-style: none"><input type="checkbox" checked> 영문으로된 개발문서, 원문 등을 독해할 수 있는 능력</li>
+<li style="list-style: none"><input type="checkbox" checked> Rest api에 대한 이해</li>
+<li style="list-style: none"><input type="checkbox" checked> Sass, Less, Scss와 같은 CSS pre-processor</li>
+<li style="list-style: none"><input type="checkbox" checked> Bootstrap, Maetirlize같은 CSS 프레임웍 활용</li>
+<li style="list-style: none"><input type="checkbox" checked> 지식 공유를 위해 블로그를 운영하시는 분</li>
+</ul>
+<p>18개중에 2개를 체크하지 못했다. SSR과 TDD이다. 까다로운 면접관을 만난다면 체크한 15가지보다 못한 2가지에 관해 질문할 것이다. 그 때 나는 어떻게 대답을 해야할까?</p>
+<p><strong>왜 SSR을 사용하지 않았나요?</strong></p>
+<p>내가 한 대부분의 프로젝트는 SEO 검색 최적화가 필요하지 않았다. 그래서 당연하게 리스크를 감당 해야할 SSR을 선택하지 않았다. SEO가 중요한 회사 소개 페이지를 만들 때도 서버를 올리기 귀찮아서 정적 사이트 생성기인 Gatsby를 사용하였다. 앞으로도 굳이 SEO와 초기 속도가 중요한 프로젝트라면 SSR을 사용하지 않을것이다. 하지만 둘 중 하나라도 가져가야 한다면 난 주저없이 SSR을 사용할 것이다. 어려워서 또는 몰라서 사용하지 않은 것이 아니라 필요하지 않기 때문에 사용하지 않은 것이다.</p>
+<p><strong>왜 TDD를 적용하지 않았나요?</strong></p>
+<p>프론트엔드는 백엔드와 달리 항상 바뀐다. 처음부터 설계를 잡고 그대로 진행한다면 TDD를 적용하지 못할 이유가 없다. 하지만 디자이너와 현업에 있는 마케터 그리고 실무자들에게 다양한 피드백을 받다보면 항상 화면이 바뀌고 설계가 바뀐다. Request와 Response만 신경쓰면 되는 백엔드와 달리 수 없이 많은 화면이 어떻게 렌더링이 되어야 하는지 돔의 구조를 어디까지 체크할지 등 생각해야할 것이 너무 많다. 그래서 비지니스 로직을 짜는 시간보다 테스트를 짜는 시간이 더 길어질 것이다. 그래서 난 아직도 프론트엔드에 TDD를 적용해야할지 의심스럽다.</p>
+<p>이 외에 나에 대한 소개는 면접에서 받는 질문을 통해 대신할 수 있을것 같다. 정리를 해보니 상당히 만족스럽다. 나 꽤 잘하는 듯? 이제 내가 바라는 회사에 대하여 정리하여 보자.</p>
+<h2 id="새로-갈-회사에게-바라는-점"><a href="#새로-갈-회사에게-바라는-점" class="headerlink" title="새로 갈 회사에게 바라는 점"></a>새로 갈 회사에게 바라는 점</h2><ol>
+<li>나이로 무시하지 않는 회사</li>
+<li>학력으로 무시하지 않는 회사</li>
+<li>성별로 차별하지 않는 회사</li>
+<li><strong>성공한</strong> 또는 <strong>성공할 예정인</strong> 또는 <strong>사람을 끌어당기는</strong> 매력이 있는 제품을 가진 회사</li>
+<li>사내정치가 없는 회사</li>
+<li>개발장비에 돈을 아끼지 않는 회사</li>
+<li><strong>상시 근로자 수 5인 이상인 회사</strong></li>
+<li>연차 사용 자유</li>
+<li>탄력 근무제 또는 재택 근무제</li>
+</ol>
+<p>정리를 해보니 9가지 정도 되는 것 같다. 위 조건을 지키지 못하는 회사가 존재할 수 있느냐? 라고 생각할 수도 있지만 정말 많다. 세상은 넓고 이상한 회사는 많다. 난 이 9개 중에 4번을 제일 중점으로 두었다. 개발자로써 개발의 깊이도 물론 중요하지만 지금의 나에겐 제품을 발전시키고 이해할 줄 아는 능력이 더 중요하다고 생각했다.</p>
+<h2 id="면접을-보았던-회사들"><a href="#면접을-보았던-회사들" class="headerlink" title="면접을 보았던 회사들"></a>면접을 보았던 회사들</h2><p>위의 9가지 조건을 만족하는 회사를 찾기가 꽤 어려웠다. 그래서 찾고 찾아낸 끝에 5개의 회사에 지원했다.</p>
+<h3 id="B-M-스타트업"><a href="#B-M-스타트업" class="headerlink" title="B.M 스타트업"></a>B.M 스타트업</h3><p>배달 업계에서 1위를 달린다는 그곳이다. 코딩 문제는 잘 풀었는데 자기소개서를 쓰기 너무 귀찮아서 고등학교 졸업 직후 썼던 자소서를 그대로 냈다. 당연히 탈락이었다.</p>
+<h3 id="H-스타트업"><a href="#H-스타트업" class="headerlink" title="H 스타트업"></a>H 스타트업</h3><p>스타트업중에서 이름있는 곳 중 하나인 이곳은 익명 영상 채팅 서비스로 대단한 인기를 끌었다. 코딩 문제를 꽤 잘풀었는데 탈락했다. 왜지? 너무 오래 전이라 기억이 잘 나지 않는다.</p>
+<h3 id="B-스타트업"><a href="#B-스타트업" class="headerlink" title="B 스타트업"></a>B 스타트업</h3><p>마케팅으로 굉장히 유명한 스타트업이다. 순도 100% 마케팅 회사라 봐도 무방한데 빠른 시장 선점을 위해 개발 인력을 꾸리고 있었다. 면접을 가서 HR 담당자와 PM과 한시간 가량 꽤 재미있는 얘기를 나눴다. 붙을 줄 알았지만 결과는 탈락이었다. 아무래도 이 기업은 기술보단 빠른 출시와 효율을 선호 하였고 난 그에 반대되는 성향을 가지고 있었던 탓인 듯 하다.</p>
+<h3 id="T-스타트업"><a href="#T-스타트업" class="headerlink" title="T 스타트업"></a>T 스타트업</h3><p>간편 송금 서비스로 유명한 곳이다. 정확히 지원한지 4분만에 서류 탈락이라고 연락이 왔다. 그래서 “아 난 4분이면 끝날 이력서를 가지고 있구나”라고 절실히 깨닫고 이력서를 다 지우고 처음부터 다시 작성하였다.</p>
+<h3 id="Class101"><a href="#Class101" class="headerlink" title="Class101"></a>Class101</h3><hr>
+<p><strong>온라인 취미 클래스 플랫폼</strong><br>“세상 사람들이 자신이 사랑하는 일을 하면서 살 수 있게 만들어주자”</p>
+<p>어렸을 때 저희는 항상 고민했습니다. ‘나중에 뭐먹고 살지?’ , ‘나중에 뭐해야하지?’ , ‘이게 돈이될까?’ , ‘야, 그거 하면서 어떻게 먹고 살려고해? 얼릉 공부해.’ 등등…</p>
+<p>그래서 저희는 이렇게 생각했습니다.</p>
+<p>‘그냥 자기가 하고싶고 사랑하는 일을 하면서 살면 안되나?’</p>
+<p>그렇습니다. 저희가 만들고 싶은 세상은 모든 사람들이 자신이 사랑하는 일을 하면서 살 수 있는 세상입니다. 어떻게 그런 세상을 만들 수 있을까요? 저희가 생각한 방법은 자신이 사랑하는 일을 다른 사람들에게 가르치면서 살 수 있게 만들어 드리고자 합니다. 자신이 사랑하는 일을 다른 사람의 취미로 전파할 수 있다면 그렇게 알려주는 과정에서 충분한 수익이 생기고, 더 많은 사람들이 자신이 살아하는 일을 함께 하는 기쁨도 얻을 수 있다고 생각합니다.</p>
+<hr>
+<p>제품의 설명 중 일부를 가져왔다. 회사의 비전이 한 눈에 들어왔고 그에 대한 이상향 또한 마음에 들었다.</p>
+<p><strong>“세상 사람들이 자신이 사랑하는 일을 하면서 살 수 있게 만들어주자”</strong> 라는 말이 너무 좋았다.</p>
+<p>그래서 별 고민 없이 합류를 결정했다.</p>
+<p>이번에 이직을 하면서 깨달은 것은 아래 2가지다.</p>
+<ol>
+<li><strong>학력보단 경력, 경력보단 실력이다.</strong></li>
+<li><strong>개발자 본인도 기업을 평가할 수 있어야 한다.</strong></li>
+</ol>
+<p><img src="https://media.giphy.com/media/1CxoQyLnmFTd6/giphy.gif" alt="탈출은 능지순"></p>
+<p>항상 자신을 되돌아보고 정진하는 사람이 될 수 있도록 노력하자.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/이직/">이직</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/11/redux-step2/">
+                <span class="level-item">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ddalpange.github.io/2019/04/25/change-company/';
+        this.page.identifier = '2019/04/25/change-company/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'https-ddalpange-github-com' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/profile.jpeg" alt="Yohan Kim">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Yohan Kim
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Full-Stack Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            45
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            56
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                팔로우</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/ddalpange">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/rss2.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            링크
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ddalpange" target="_blank" rel="external nofollow noopener noreferrer">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Firebase/">
+            <span class="level-start">
+                <span class="level-item">Firebase</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">15</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Node/">
+            <span class="level-start">
+                <span class="level-item">Node</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Redux/">
+            <span class="level-start">
+                <span class="level-item">Redux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/RxJS/">
+            <span class="level-start">
+                <span class="level-item">RxJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SimpleMemo/">
+            <span class="level-start">
+                <span class="level-item">SimpleMemo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/UI-UX/">
+            <span class="level-start">
+                <span class="level-item">UI/UX</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/경험/">
+            <span class="level-start">
+                <span class="level-item">경험</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/블로그/">
+            <span class="level-start">
+                <span class="level-item">블로그</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/2018년/" style="font-size: 10px;">2018년</a> <a href="/tags/Algorithm/" style="font-size: 11.67px;">Algorithm</a> <a href="/tags/Angular/" style="font-size: 18.33px;">Angular</a> <a href="/tags/Chart/" style="font-size: 10px;">Chart</a> <a href="/tags/ClipboardJS/" style="font-size: 10px;">ClipboardJS</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/DeepCopy/" style="font-size: 10px;">DeepCopy</a> <a href="/tags/Deploy/" style="font-size: 10px;">Deploy</a> <a href="/tags/ES2015/" style="font-size: 10px;">ES2015</a> <a href="/tags/ES6/" style="font-size: 11.67px;">ES6</a> <a href="/tags/Encoding/" style="font-size: 10px;">Encoding</a> <a href="/tags/Event/" style="font-size: 10px;">Event</a> <a href="/tags/Firebase/" style="font-size: 13.33px;">Firebase</a> <a href="/tags/Flux/" style="font-size: 11.67px;">Flux</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hangul/" style="font-size: 10px;">Hangul</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/Ionic/" style="font-size: 16.67px;">Ionic</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/N/" style="font-size: 10px;">N</a> <a href="/tags/NVM/" style="font-size: 11.67px;">NVM</a> <a href="/tags/Node/" style="font-size: 11.67px;">Node</a> <a href="/tags/Observable/" style="font-size: 10px;">Observable</a> <a href="/tags/Observer/" style="font-size: 10px;">Observer</a> <a href="/tags/OpenSource/" style="font-size: 10px;">OpenSource</a> <a href="/tags/Prettier/" style="font-size: 10px;">Prettier</a> <a href="/tags/Programming/" style="font-size: 11.67px;">Programming</a> <a href="/tags/PureFunction/" style="font-size: 10px;">PureFunction</a> <a href="/tags/Redux/" style="font-size: 11.67px;">Redux</a> <a href="/tags/RxJS/" style="font-size: 11.67px;">RxJS</a> <a href="/tags/ShallowCopy/" style="font-size: 10px;">ShallowCopy</a> <a href="/tags/SimpleMemo/" style="font-size: 15px;">SimpleMemo</a> <a href="/tags/StackEdit/" style="font-size: 10px;">StackEdit</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Subject/" style="font-size: 10px;">Subject</a> <a href="/tags/Subscription/" style="font-size: 10px;">Subscription</a> <a href="/tags/Tistory/" style="font-size: 10px;">Tistory</a> <a href="/tags/Travis/" style="font-size: 10px;">Travis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Underscore/" style="font-size: 10px;">Underscore</a> <a href="/tags/Unsubscribe/" style="font-size: 10px;">Unsubscribe</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/VSCODE/" style="font-size: 10px;">VSCODE</a> <a href="/tags/Wget/" style="font-size: 10px;">Wget</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/spread/" style="font-size: 10px;">spread</a> <a href="/tags/threeDots/" style="font-size: 10px;">threeDots</a> <a href="/tags/노루/" style="font-size: 10px;">노루</a> <a href="/tags/목업/" style="font-size: 10px;">목업</a> <a href="/tags/블로그/" style="font-size: 10px;">블로그</a> <a href="/tags/이직/" style="font-size: 10px;">이직</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/04/25/change-company/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/12pWOEeKbbfdio/giphy.gif" alt="또 한번의 이직">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-25T09:39:55.000Z">2019-04-25</time></div>
+                    <a href="/2019/04/25/change-company/" class="title has-link-black-ter is-size-6 has-text-weight-normal">또 한번의 이직</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/11/redux-step2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-11T09:39:55.000Z">2019-01-11</time></div>
+                    <a href="/2019/01/11/redux-step2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스의 미들웨어에 대하여 알아보자.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/09/redux-step1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Redux 마스터하기 - 리덕스란 무엇인가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-09T09:39:55.000Z">2019-01-09</time></div>
+                    <a href="/2019/01/09/redux-step1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Redux 마스터하기 - 리덕스란 무엇인가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Redux/">Redux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/31/remember-2018/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://media.giphy.com/media/l0DAGFDf0PSxz0ZNu/giphy.gif" alt="2018년 회고">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-31T09:39:55.000Z">2018-12-31</time></div>
+                    <a href="/2018/12/31/remember-2018/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2018년 회고</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/경험/">경험</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/hexo-clipboard/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://zenorocha.github.io/clipboard.js/assets/images/facebook.png" alt="Hexo에서 Code Copy (Clipboard) 버튼 만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T09:39:55.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/hexo-clipboard/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo에서 Code Copy (Clipboard) 버튼 만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/블로그/">블로그</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">7월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2018년/">
+                        <span class="tag">2018년</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Algorithm/">
+                        <span class="tag">Algorithm</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Angular/">
+                        <span class="tag">Angular</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Chart/">
+                        <span class="tag">Chart</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ClipboardJS/">
+                        <span class="tag">ClipboardJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Closure/">
+                        <span class="tag">Closure</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DeepCopy/">
+                        <span class="tag">DeepCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Deploy/">
+                        <span class="tag">Deploy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES2015/">
+                        <span class="tag">ES2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Encoding/">
+                        <span class="tag">Encoding</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Event/">
+                        <span class="tag">Event</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Firebase/">
+                        <span class="tag">Firebase</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flux/">
+                        <span class="tag">Flux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hangul/">
+                        <span class="tag">Hangul</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IDE/">
+                        <span class="tag">IDE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Interview/">
+                        <span class="tag">Interview</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ionic/">
+                        <span class="tag">Ionic</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Javascript/">
+                        <span class="tag">Javascript</span>
+                        <span class="tag is-grey">23</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Markdown/">
+                        <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/N/">
+                        <span class="tag">N</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NVM/">
+                        <span class="tag">NVM</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node/">
+                        <span class="tag">Node</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observable/">
+                        <span class="tag">Observable</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Observer/">
+                        <span class="tag">Observer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OpenSource/">
+                        <span class="tag">OpenSource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Prettier/">
+                        <span class="tag">Prettier</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Programming/">
+                        <span class="tag">Programming</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PureFunction/">
+                        <span class="tag">PureFunction</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redux/">
+                        <span class="tag">Redux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJS/">
+                        <span class="tag">RxJS</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ShallowCopy/">
+                        <span class="tag">ShallowCopy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SimpleMemo/">
+                        <span class="tag">SimpleMemo</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/StackEdit/">
+                        <span class="tag">StackEdit</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subject/">
+                        <span class="tag">Subject</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Subscription/">
+                        <span class="tag">Subscription</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tistory/">
+                        <span class="tag">Tistory</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Travis/">
+                        <span class="tag">Travis</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Ubuntu/">
+                        <span class="tag">Ubuntu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Underscore/">
+                        <span class="tag">Underscore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unsubscribe/">
+                        <span class="tag">Unsubscribe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VSCODE/">
+                        <span class="tag">VSCODE</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Wget/">
+                        <span class="tag">Wget</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/rest/">
+                        <span class="tag">rest</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/spread/">
+                        <span class="tag">spread</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/threeDots/">
+                        <span class="tag">threeDots</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/노루/">
+                        <span class="tag">노루</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/목업/">
+                        <span class="tag">목업</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/블로그/">
+                        <span class="tag">블로그</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/이직/">
+                        <span class="tag">이직</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/회고/">
+                        <span class="tag">회고</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/Logo.png" alt="또 한번의 이직" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 ddalpange&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="http://github.com/ddalpange">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ddalpange.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
