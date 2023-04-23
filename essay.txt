@@ -1,6 +1,6 @@
 0:[[["",{"children":["essay",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L1","$L2"]]
 3:I{"id":"2070","name":"","chunks":["131:131-b649a46ff1b8d8bb","185:app/layout-7117d08aaaa65714"],"async":false}
-4:I{"id":"7131","name":"","chunks":["131:131-b649a46ff1b8d8bb","931:app/page-d55a3db7a3ed8315"],"async":false}
+4:I{"id":"7131","name":"","chunks":["131:131-b649a46ff1b8d8bb","931:app/page-1f103c5c36dee5a3"],"async":false}
 5:I{"id":"830","name":"","chunks":["272:webpack-2d9ad5e2e62df6f6","776:0b7c6ed9-5895ea2b955a8219","474:474-2bfbc4a0bef14471"],"async":false}
 6:I{"id":"2079","name":"","chunks":["272:webpack-2d9ad5e2e62df6f6","776:0b7c6ed9-5895ea2b955a8219","474:474-2bfbc4a0bef14471"],"async":false}
 2:[[["$","meta",null,{"charSet":"utf-8"}],["$","title",null,{"children":"Yozzing Blog"}],["$","meta",null,{"name":"description","content":"개발글과 에세이를 씁니다."}],null,null,null,null,null,null,null,null,["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],null,null,null,null,null,null,null,null,null,null,[]],[null,null,null,null],null,null,[null,null,null,null,null],null,null,null,null,[null,[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"any"}]],[],null]]
