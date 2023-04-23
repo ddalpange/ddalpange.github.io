@@ -1,8 +1,7 @@
 ---
 title: 자바스크립트 클로져
 date: 2017-10-03 22:44:53
-thumbnail: http://cfile2.uf.tistory.com/image/215FD64D56BD8AAD21359E
-banner: http://cfile2.uf.tistory.com/image/215FD64D56BD8AAD21359E
+thumbnail:
 categories: [Javascript]
 tags: [Javascript, Closure]
 toc: true

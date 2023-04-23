@@ -1,7 +1,7 @@
 ---
 title: 첫 프로젝트
 date: 2018-07-21 18:21:27
-thumbnail: https://www.knowrulimited.com/assets/images/knowru-dashboard.png
+thumbnail:
 toc: true
 categories: [경험]
 tags: [노루]

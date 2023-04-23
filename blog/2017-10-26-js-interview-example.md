@@ -3,8 +3,7 @@ title: 자바스크립트 코딩 인터뷰 정리
 categories: [Javascript]
 date: 2017-10-26 23:53:22
 tags: [Javascript, Interview]
-thumbnail: http://cfile2.uf.tistory.com/image/215FD64D56BD8AAD21359E
-banner: http://cfile2.uf.tistory.com/image/215FD64D56BD8AAD21359E
+thumbnail:
 toc: true
 
 ---

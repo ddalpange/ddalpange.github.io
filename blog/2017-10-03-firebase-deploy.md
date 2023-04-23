@@ -1,8 +1,7 @@
 ---
 title: Firebase 배포
 date: 2017-10-03 22:45:54
-thumbnail: https://firebase.google.com/images/homepage/news/500_blog_firebase_2x.png?hl=ko
-banner: https://firebase.google.com/images/homepage/news/500_blog_firebase_2x.png?hl=ko
+thumbnail:
 categories: [Firebase]
 tags: [Javascript, Angular, Firebase, Ionic]
 toc: true

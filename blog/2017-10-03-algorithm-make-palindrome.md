@@ -1,8 +1,7 @@
 ---
 title: 회문 만들기
 date: 2017-10-03 22:48:09
-thumbnail: https://media2.fdncms.com/portmerc/imager/u/large/18918590/logo.jpg
-banner: https://media2.fdncms.com/portmerc/imager/u/large/18918590/logo.jpg
+thumbnail:
 categories: [Algorithm]
 tags: [Algorithm, Programming]
 toc: true

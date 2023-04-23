@@ -3,7 +3,7 @@ title: NVM(Node Version Manager)을 통한 NodeJS 버전 관리
 tags: [Node, NVM, N]
 categories: [Node]
 date: 2018-03-24 18:39:55
-thumbnail: http://seanamarasinghe.com/wp-content/uploads/2016/02/nvm-1050x360.jpg
+thumbnail:
 toc: true
 ---
 
