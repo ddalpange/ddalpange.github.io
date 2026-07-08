@@ -1,5 +1,6 @@
 ---
 publish: true
+sidebar: false
 ---
 
 [ddalpange@gmail.com](mailto:ddalpange@gmail.com)
