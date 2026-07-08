@@ -118,6 +118,20 @@
     --callout-icon: var(--callout-icon-quote);
   }
 
+  & .callout[data-callout] {
+    --color: #7a43b5;
+    --border: #7a43b566;
+    --bg: #7a43b514;
+
+    box-shadow: inset 3px 0 0 var(--color);
+  }
+
+  & .callout .callout[data-callout] {
+    --color: #db8942;
+    --border: #db894266;
+    --bg: #db894214;
+  }
+
   &.is-collapsed {
     & > .callout-title > .fold-callout-icon {
       transform: rotateZ(-90deg);
