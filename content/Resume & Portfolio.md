@@ -347,18 +347,18 @@ publish: true
 
 **소프트웨어 엔지니어**
 
-> [!info]+ Schema based development
+> [!note]+ Schema based development
 >  - Protobuf 기반으로 webview와 native, server 인터페이스 작성
 >  - 작성된 schema를 통해 반복적인 코드를 기계적으로 자동 생성
 >  - Open API Schema를 기반으로 rest api들의 반복적인 코드를 기계적으로 자동 생성
 >  - 스키마 저장소를 분리하여 PR을 통해 api tech spec 논의
 
-> [!INFO]+ 컴파일 / 번들링 방식 연구 및 개선
+> [!note]+ 컴파일 / 번들링 방식 연구 및 개선
 > - css-in-js로 인한 babel 의존성을 제거하고 swc로 컴파일러 교체
 > - esm, cjs 두 모듈링을 지원하기 위한 작업 진행
 > - 모노레포에서 각 패키지들의 hmr을 지원
 
-> [!info]+ Trunk Based Development 구현하기 위한 일들을 진행
+> [!note]+ Trunk Based Development 구현하기 위한 일들을 진행
 > - yarn2 + ultra-runner를 사용한 초기 모노레포 셋업
 > - pnpm + turbo를 통한 모노레포 개선
 > - PR 검증과 프로덕트 배포를 위한 CI&CD 작성
@@ -366,16 +366,16 @@ publish: true
 > - 모노레포로 인한 각종 빌드 이슈 해결 
 > - 배포 프로세스 정의
 
-> [!info]+ 테스트 코드 작성
+> [!note]+ 테스트 코드 작성
 > - 커버리지 80%를 목표로 유닛테스트 작성
 > - E2E 테스트를 위해 Cypress를 셋업하고 QA Engineer 온보딩 진행
 > - 스키마를 통해 목 데이터 생성기, msw 코드를 자동으로 생성해 유닛 테스트, 스토리북에 활용
 
-> [!info]+ 사내 백오피스 구현
+> [!note]+ 사내 백오피스 구현
 > - 공용 컴포넌트, 로직, 컨버터 작성 후 라이브러리로 말아서 배포
 > - 어드민 데이터그리드, 공통 필터 구현 스펙 논의 
 
-> [!info]+ 그 외 것들
+> [!note]+ 그 외 것들
 > - 기존 코드리뷰 방법을 보완하기 위해 [Graphite](https://graphite.dev/)를 사용하여 Stacked Changes 방법을 팀내 전파
 > - 3개월 정도 미국 지사에서 영어권 엔지니어들과 협업
 > - 소수 오픈소스 프로젝트 기여 (Pbkit, Storybook 등)
@@ -386,7 +386,7 @@ publish: true
 
 **소프트웨어 엔지니어**
 
-> [!info]+ 커머스 셀 소프트웨어 엔지니어
+> [!note]+ 커머스 셀 소프트웨어 엔지니어
 > - 퍼널 줄이기 A/B 테스트를 통한 결제 컨버전 400% 개선
 > - 쿠폰 및 구성품 선택 UX 개선 
 > - 배송 추적 UX 개선
@@ -394,7 +394,7 @@ publish: true
 > - 각종 결제, 배송 에러 트러블 슈팅
 
 
-> [!info]+ 프론트엔드 챕터 DRI
+> [!note]+ 프론트엔드 챕터 DRI
 > - Class101 CSR 프로젝트를 SSR을 지원하도록 변경
 > - SEO 최적화를 위해 메타태그, 사이트맵, 스키마 등을 세팅
 > - 서버리스 이미지 압축 서비스에서 다양한 포멧(webp, png, jpg)을 지원하도록 변경 
