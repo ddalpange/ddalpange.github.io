@@ -1,7 +1,8 @@
 ---
-title: ddalpange
+publish: true
+home: true
 ---
+- [[Resume & Portfolio]]
+- [[기술 블로그]]
 
-# ddalpange
-
-아직 공개로 표시된 노트가 없습니다.
+![[👨🏻‍💻 Yohan Kim]]
