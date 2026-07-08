@@ -1,3 +1,23 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+.markdown-rendered {
+  :is(ul, ol) {
+    margin-block: 0.35rem;
+    padding-inline-start: 1.35rem;
+  }
+
+  :is(ul, ol) :is(ul, ol) {
+    margin-block: 0.2rem;
+    padding-inline-start: 1.15rem;
+  }
+
+  li {
+    margin-block: 0.2rem;
+  }
+
+  li > :is(ul, ol) {
+    margin-top: 0.2rem;
+  }
+}
