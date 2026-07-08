@@ -1,4 +1,5 @@
 export { Assets } from "./assets"
 export { Static } from "./static"
 export { ComponentResources } from "./componentResources"
+export { ContentMetaDateFormat } from "./contentMetaDateFormat"
 export { SidebarMetadata } from "./sidebarMetadata"

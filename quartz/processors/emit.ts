@@ -78,8 +78,9 @@ export async function emitContent(ctx: BuildCtx, content: ProcessedContent[]) {
   const otherEmitters = cfg.plugins.emitters.filter(
     (e) => e.name !== "PageTypeDispatcher" && e.name !== "ComponentResources",
   )
-  const postEmitters = otherEmitters.filter((e) => e.name === "SidebarMetadata")
-  const primaryEmitters = otherEmitters.filter((e) => e.name !== "SidebarMetadata")
+  const postEmitterNames = new Set(["ContentMetaDateFormat", "SidebarMetadata"])
+  const postEmitters = otherEmitters.filter((e) => postEmitterNames.has(e.name))
+  const primaryEmitters = otherEmitters.filter((e) => !postEmitterNames.has(e.name))
   let emitErrors = 0
   const counts = await Promise.all(
     primaryEmitters.map((emitter) =>
