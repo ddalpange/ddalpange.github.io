@@ -78,9 +78,11 @@ export async function emitContent(ctx: BuildCtx, content: ProcessedContent[]) {
   const otherEmitters = cfg.plugins.emitters.filter(
     (e) => e.name !== "PageTypeDispatcher" && e.name !== "ComponentResources",
   )
+  const postEmitters = otherEmitters.filter((e) => e.name === "SidebarMetadata")
+  const primaryEmitters = otherEmitters.filter((e) => e.name !== "SidebarMetadata")
   let emitErrors = 0
   const counts = await Promise.all(
-    otherEmitters.map((emitter) =>
+    primaryEmitters.map((emitter) =>
       runEmitter(emitter, ctx, contentWithVirtual, staticResources, log).catch((err) => {
         emitErrors++
         console.error(`Emitter "${emitter.name}" failed:`, err.message ?? err)
@@ -89,6 +91,16 @@ export async function emitContent(ctx: BuildCtx, content: ProcessedContent[]) {
     ),
   )
   emittedFiles += counts.reduce((sum, c) => sum + c, 0)
+
+  for (const emitter of postEmitters) {
+    emittedFiles += await runEmitter(emitter, ctx, contentWithVirtual, staticResources, log).catch(
+      (err) => {
+        emitErrors++
+        console.error(`Emitter "${emitter.name}" failed:`, err.message ?? err)
+        return 0
+      },
+    )
+  }
 
   if (emitErrors > 0) {
     console.warn(

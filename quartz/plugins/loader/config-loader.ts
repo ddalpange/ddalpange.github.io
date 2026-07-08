@@ -473,14 +473,12 @@ export async function loadQuartzConfig(
 
   // Import built-in plugins
   const builtinPlugins = await import("../index")
-  const builtinTransformers: unknown[] = [
-    builtinPlugins.CollapseCalloutsByDefault(),
-    builtinPlugins.SidebarVisibility(),
-  ]
+  const builtinTransformers: unknown[] = [builtinPlugins.CollapseCalloutsByDefault()]
   const builtinEmitters = [
     builtinPlugins.ComponentResources(),
     builtinPlugins.Assets(),
     builtinPlugins.Static(),
+    builtinPlugins.SidebarMetadata(),
   ]
   const builtinPageTypes = [builtinPlugins.PageTypes.NotFoundPageType()]
 
