@@ -12,12 +12,12 @@ configuration:
     - templates
     - .obsidian
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
+    fontOrigin: local
+    cdnCaching: false
     typography:
       header: Noto Sans KR
       body: Noto Sans KR
-      code: IBM Plex Mono
+      code: Fira Code
     colors:
       lightMode:
         light: "#faf8f8"
@@ -101,6 +101,9 @@ plugins:
     order: 92
   - source: github:quartz-community/fonts
     enabled: true
+    options:
+      useThemeFonts: false
+      fontOrigin: local
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish
