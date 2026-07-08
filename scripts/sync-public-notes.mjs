@@ -137,6 +137,10 @@ function cleanMarkdown(markdown) {
   return normalizeMarkdownAssetLinks(markdown)
 }
 
+function stripFencedCodeBlocks(markdown) {
+  return markdown.replace(/(^|\n)(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\2(?=\n|$)/g, "$1")
+}
+
 function stripLinkTarget(rawTarget) {
   let target = rawTarget.trim()
   if (target.startsWith("<") && target.endsWith(">")) target = target.slice(1, -1)
@@ -233,7 +237,9 @@ walkFiles(vaultRoot, (notePath) => {
   ensureInsideRoot(contentRoot, outputPath)
 
   const cleaned = cleanMarkdown(original)
-  for (const ref of collectAssetReferences(cleaned)) assetReferences.add(ref)
+  for (const ref of collectAssetReferences(stripFencedCodeBlocks(cleaned))) {
+    assetReferences.add(ref)
+  }
 
   publishedNotes.push({
     input: notePath,
