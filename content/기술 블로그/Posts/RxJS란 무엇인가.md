@@ -2,6 +2,9 @@
 publish: true
 base: "[[Untitled.base]]"
 작성일: 2018-08-21
+created: 2018-08-21
+published: 2018-08-21
+modified: 2018-08-21
 원문 링크: https://ddalpange.github.io/blog/2018-08-21-rxjs-whatisrxjs
 카테고리: Engineering
 ---

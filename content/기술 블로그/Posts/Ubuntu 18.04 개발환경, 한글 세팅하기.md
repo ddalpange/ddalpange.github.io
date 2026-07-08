@@ -2,6 +2,9 @@
 publish: true
 base: "[[Untitled.base]]"
 작성일: 2018-11-15
+created: 2018-11-15
+published: 2018-11-15
+modified: 2018-11-15
 원문 링크: https://ddalpange.github.io/blog/2018-11-15-ubuntu-18-0-4-hangul-and-devenv-setup
 카테고리: Engineering
 ---

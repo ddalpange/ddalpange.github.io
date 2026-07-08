@@ -2,6 +2,9 @@
 publish: true
 base: "[[Untitled.base]]"
 작성일: 2017-12-22
+created: 2017-12-22
+published: 2017-12-22
+modified: 2017-12-22
 원문 링크: https://ddalpange.github.io/blog/2017-12-22-linux-wget
 카테고리: Engineering
 ---

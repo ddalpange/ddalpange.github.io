@@ -2,6 +2,9 @@
 publish: true
 base: "[[Untitled.base]]"
 작성일: 2018-11-17
+created: 2018-11-17
+published: 2018-11-17
+modified: 2018-11-17
 원문 링크: https://ddalpange.github.io/blog/2018-11-17-hexo-travis-stackedit
 카테고리: Engineering
 ---

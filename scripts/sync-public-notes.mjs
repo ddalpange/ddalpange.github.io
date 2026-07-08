@@ -62,9 +62,9 @@ function parseFrontmatter(markdown) {
 
   const data = {}
   for (const line of match[1].split(/\r?\n/)) {
-    const pair = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/)
+    const pair = line.match(/^([^\s:#][^:\r\n]*):\s*(.*)$/u)
     if (!pair) continue
-    const key = pair[1]
+    const key = pair[1].trim()
     let value = pair[2].trim()
     if (
       (value.startsWith('"') && value.endsWith('"')) ||
@@ -83,6 +83,7 @@ function parseFrontmatter(markdown) {
     data,
     body: markdown.slice(match[0].length),
     raw: match[0],
+    frontmatter: match[1],
   }
 }
 
@@ -113,6 +114,16 @@ function slugToRelativePath(slug) {
   return clean.endsWith(".md") ? clean : `${clean}.md`
 }
 
+function isFolderIndexNote(vaultRoot, notePath) {
+  const relative = path.relative(vaultRoot, notePath)
+  const noteName = path.basename(notePath, path.extname(notePath))
+  const folderName = path.basename(path.dirname(notePath))
+
+  if (noteName !== folderName) return null
+  const folder = path.dirname(relative)
+  return folder === "." ? "index.md" : path.join(folder, "index.md")
+}
+
 function destinationForNote(vaultRoot, notePath, frontmatter) {
   if (
     toBool(frontmatter.home) ||
@@ -122,6 +133,8 @@ function destinationForNote(vaultRoot, notePath, frontmatter) {
     return "index.md"
   }
   if (frontmatter.slug) return slugToRelativePath(frontmatter.slug)
+  const folderIndex = isFolderIndexNote(vaultRoot, notePath)
+  if (folderIndex) return folderIndex
   return path.relative(vaultRoot, notePath)
 }
 
@@ -133,8 +146,42 @@ function normalizeMarkdownAssetLinks(markdown) {
   return markdown.replace(/(!?\[[^\]]*\]\()<?\/?assets\//g, "$1/assets/")
 }
 
+function hasFrontmatterKey(lines, key) {
+  return lines.some((line) =>
+    line.match(new RegExp(`^${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*:`)),
+  )
+}
+
+function normalizeFrontmatterDates(markdown) {
+  const { data, body, raw, frontmatter } = parseFrontmatter(markdown)
+  if (!raw) return markdown
+
+  const dateValue = data["작성일"] || data.date
+  if (!dateValue) return markdown
+
+  const value = String(dateValue).trim()
+  if (!value) return markdown
+
+  const lines = frontmatter.split(/\r?\n/)
+  const additions = []
+  for (const key of ["created", "published", "modified"]) {
+    if (!hasFrontmatterKey(lines, key)) additions.push(`${key}: ${value}`)
+  }
+  if (additions.length === 0) return markdown
+
+  const insertAfterKey = ["작성일", "date"].find((key) => hasFrontmatterKey(lines, key))
+  const insertIndex = insertAfterKey
+    ? lines.findIndex((line) =>
+        line.match(new RegExp(`^${insertAfterKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*:`)),
+      )
+    : lines.length - 1
+
+  lines.splice(insertIndex + 1, 0, ...additions)
+  return ["---", ...lines, "---", body].join("\n")
+}
+
 function cleanMarkdown(markdown) {
-  return normalizeMarkdownAssetLinks(markdown)
+  return normalizeMarkdownAssetLinks(normalizeFrontmatterDates(markdown))
 }
 
 function stripFencedCodeBlocks(markdown) {
@@ -206,6 +253,58 @@ function writePublishedIndex(contentRoot, publishedNotes) {
   fs.writeFileSync(path.join(contentRoot, "index.md"), lines.join("\n"))
 }
 
+function toPosixPath(filePath) {
+  return filePath.split(path.sep).join("/")
+}
+
+function linkFrom(fromRelative, toRelative) {
+  const fromDir = path.dirname(fromRelative)
+  return toPosixPath(path.relative(fromDir, toRelative)).replace(/\.md$/, "")
+}
+
+function markdownLink(title, href) {
+  return `[${title.replace(/]/g, "\\]")}](<${href.replace(/>/g, "%3E")}>)`
+}
+
+function buildTechBlogPostList(rootNote, publishedNotes) {
+  const posts = publishedNotes
+    .filter((note) => toPosixPath(note.outputRelative).startsWith("기술 블로그/Posts/"))
+    .toSorted((a, b) => {
+      const dateA = String(a.frontmatter["작성일"] || a.frontmatter.published || "")
+      const dateB = String(b.frontmatter["작성일"] || b.frontmatter.published || "")
+      return dateB.localeCompare(dateA) || a.title.localeCompare(b.title)
+    })
+
+  if (posts.length === 0) return ""
+
+  const lines = ["## Posts", ""]
+  for (const post of posts) {
+    const date = post.frontmatter["작성일"] || post.frontmatter.published
+    const href = linkFrom(rootNote.outputRelative, post.outputRelative)
+    const prefix = date ? `${date} · ` : ""
+    lines.push(`- ${prefix}${markdownLink(post.title, href)}`)
+  }
+  return lines.join("\n")
+}
+
+function expandGeneratedEmbeds(note, publishedNotes) {
+  if (toPosixPath(note.outputRelative) !== "기술 블로그/index.md") return note.content
+
+  const postList = buildTechBlogPostList(note, publishedNotes)
+  let inserted = false
+  let content = note.content.replace(/^\s*!\[\[[^\]]+\.base\]\]\s*$/gmu, () => {
+    if (inserted || !postList) return ""
+    inserted = true
+    return postList
+  })
+
+  if (!inserted && postList) {
+    content = `${content.trimEnd()}\n\n${postList}\n`
+  }
+
+  return content.replace(/\n{3,}/g, "\n\n").trimEnd() + "\n"
+}
+
 const args = parseArgs(process.argv.slice(2))
 const siteRoot = path.resolve(args.get("site") || process.env.QUARTZ_SITE || process.cwd())
 const vaultRoot = path.resolve(
@@ -246,6 +345,7 @@ walkFiles(vaultRoot, (notePath) => {
     outputRelative,
     outputPath,
     title: titleForNote(outputRelative, data),
+    frontmatter: data,
     home: outputRelative === "index.md",
     content: cleaned,
   })
@@ -257,8 +357,10 @@ if (!dryRun) {
 }
 
 for (const note of publishedNotes) {
-  if (!dryRun) copyFile(note.input, note.outputPath)
-  if (!dryRun) fs.writeFileSync(note.outputPath, note.content)
+  if (!dryRun) {
+    fs.mkdirSync(path.dirname(note.outputPath), { recursive: true })
+    fs.writeFileSync(note.outputPath, expandGeneratedEmbeds(note, publishedNotes))
+  }
 }
 
 if (!publishedNotes.some((note) => note.home)) {

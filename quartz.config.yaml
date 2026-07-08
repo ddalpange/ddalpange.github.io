@@ -68,6 +68,8 @@ plugins:
     order: 40
   - source: github:quartz-community/table-of-contents
     enabled: true
+    options:
+      maxDepth: 6
     order: 50
     layout:
       position: right
@@ -122,6 +124,9 @@ plugins:
     enabled: true
   - source: github:quartz-community/folder-page
     enabled: true
+    options:
+      showFolderCount: false
+      showSubfolders: false
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer

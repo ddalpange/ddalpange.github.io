@@ -2,6 +2,9 @@
 publish: true
 base: "[[Untitled.base]]"
 작성일: 2019-01-11
+created: 2019-01-11
+published: 2019-01-11
+modified: 2019-01-11
 원문 링크: https://ddalpange.github.io/blog/2019-01-11-redux-step2
 카테고리: Engineering
 ---
