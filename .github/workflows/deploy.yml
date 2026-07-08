@@ -26,6 +26,16 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      - name: Cache Quartz plugins
+        uses: actions/cache@v6
+        with:
+          path: |
+            .quartz/plugins
+            .quartz-cache
+            quartz/.quartz-cache
+          key: ${{ runner.os }}-quartz-${{ hashFiles('quartz.lock.json', 'package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-quartz-
       - name: Install dependencies
         run: npm ci
       - name: Install Quartz plugins
