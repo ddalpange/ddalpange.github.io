@@ -3,6 +3,7 @@ publish: true
 Published Date: 2026-06-25
 sidebar: false
 ---
+챕터 단위 DRI 역할을 맡아 기술적인 의사결정을 책임졌고 웹뷰에서 발생하는 문제들을 짚어내고 해결했어요.
 
 - Class101 CSR 프로젝트를 SSR을 지원하도록 변경
 - SEO 최적화를 위해 메타태그, 사이트맵, 스키마 등을 세팅
